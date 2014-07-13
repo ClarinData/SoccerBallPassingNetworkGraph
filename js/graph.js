@@ -87,7 +87,6 @@ d3.csv("data/ccd.csv", function(error, coordenadas) {
                     });
                 force.stop();
             });
-            return force;
         })(
             d3.layout.force()
                 .nodes(coordenadas)
@@ -96,7 +95,7 @@ d3.csv("data/ccd.csv", function(error, coordenadas) {
                 .start()
         );
 
-        var player = (function(player) {
+        (function(player) {
             player.append("defs")
                 .append("clipPath")
                 .attr("id", function(d) {
@@ -260,7 +259,6 @@ d3.csv("data/ccd.csv", function(error, coordenadas) {
                 .text(function(d) {
                     return d.nombre;
                 });
-            return player;
         })(
             playersGroup
                 .selectAll("circle")
