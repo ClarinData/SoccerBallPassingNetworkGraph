@@ -22,9 +22,10 @@ var width = 830,
             "xmlns": "http://www.w3.org/2000/svg"
         })
     ),
-    linesGroup = svg.append("g"),
-    playersImage = svg.append("g"),
-    playersGroup = svg.append("g");
+    linesGroup = svg.append("g")
+        .attr("id", "lines"),
+    playersGroup = svg.append("g")
+        .attr("id", "players");
 
 d3.csv("data/ccd.csv", function(error, coordenadas) {
 
